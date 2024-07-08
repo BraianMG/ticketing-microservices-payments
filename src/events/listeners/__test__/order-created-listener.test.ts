@@ -5,12 +5,6 @@ import { natsWrapper } from '../../../nats-wrapper';
 import { OrderCreatedListener } from '../order-created-listener';
 import { Order } from '../../../models/order';
 
-// TODO: When you run this test jest says:
-// A worker process has failed to exit gracefully and has been force exited.
-// This is likely caused by tests leaking due to improper teardown.
-// Try running with --detectOpenHandles to find leaks.
-// Active timers can also cause this, ensure that .unref() was called on them.
-
 const setup = async () => {
   const listener = new OrderCreatedListener(natsWrapper.client);
 
